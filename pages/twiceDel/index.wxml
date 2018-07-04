@@ -1,0 +1,28 @@
+<view class="item-box" bindtap="clickToClose">
+  <view class="items">
+    <view wx:for="{{list}}"  wx:key="{{index}}"  class="item">
+      <view 
+      bindtouchstart="touchS" 
+      bindtouchend="touchend" 
+      bindtouchmove="touchM" 
+      bindtouchend="touchE" 
+      data-index="{{index}}" 
+      style="{{item.txtStyle}}" 
+      class="inner txt">
+        <image class="item-icon" mode="widthFix" src="{{item.icon}}"/>
+        <view 
+        wx:if="{{item.left < 0}}" 
+        data-index="{{index}}" 
+        class="world-text">选择车长</view>  
+        <picker 
+        wx:else class="world-text" 
+        bindchange="bindLengthChange" 
+        range="{{vehicleLengths}}" 
+        value="{{lengthIndex}}" 
+        data-index="{{index}}">选择车长</picker>
+      </view>
+      <view data-index="{{index}}" bindtap = "delItem" class="inner del">{{delText}}</view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,15 @@
+/**app.wxss**/
+.flex-wrap{
+  display: flex;
+  flex-direction: row;
+}
+
+page {
+  background-color: #f2f2f2;
+  height: 100%;
+
+}
+
+.tappable:hover {
+  opacity: .6;
+}
